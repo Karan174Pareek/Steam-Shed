@@ -213,6 +213,18 @@ export function App() {
 
   const isInMemory = getIsInMemoryFallback();
 
+  // Dynamically filter out questions already asked by the user in this session
+  const askedQuestions = new Set(
+    messages
+      .filter((m) => m.sender === 'user')
+      .map((m) => m.text.trim().toLowerCase())
+  );
+  const unaskedQuestions = suggestedQuestions.filter(
+    (q) => !askedQuestions.has(q.trim().toLowerCase())
+  );
+  const activeSuggestedQuestions =
+    unaskedQuestions.length > 0 ? unaskedQuestions : suggestedQuestions;
+
   return (
     <div className="flex flex-col min-h-screen bg-base text-accent-iron">
       {/* Header with status pill and document manager trigger */}
@@ -240,7 +252,7 @@ export function App() {
             onLoadSampleManual={handleLoadSampleManual}
             isIngesting={isIngesting}
             ingestStatus={ingestStatus}
-            suggestedQuestions={suggestedQuestions}
+            suggestedQuestions={activeSuggestedQuestions}
             onSelectQuestion={handleSendMessage}
           />
         ) : (
@@ -263,7 +275,7 @@ export function App() {
                 {/* Suggested Questions in Initial Knowledge State */}
                 <div className="max-w-xl mx-auto">
                   <SuggestedChips
-                    questions={suggestedQuestions}
+                    questions={activeSuggestedQuestions}
                     onSelect={handleSendMessage}
                     disabled={isQuerying}
                     variant="empty-state"
@@ -283,10 +295,10 @@ export function App() {
         )}
       </main>
 
-      {/* Mid-conversation Compact Suggested Questions Bar */}
-      {documents.length > 0 && messages.length > 0 && (
+      {/* Mid-conversation Compact Suggested Questions Bar (rotates to fresh unasked questions) */}
+      {documents.length > 0 && messages.length > 0 && activeSuggestedQuestions.length > 0 && (
         <SuggestedChips
-          questions={suggestedQuestions}
+          questions={activeSuggestedQuestions}
           onSelect={handleSendMessage}
           disabled={isQuerying}
           variant="compact-bar"
