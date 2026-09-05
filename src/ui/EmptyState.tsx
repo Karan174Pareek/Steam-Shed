@@ -41,7 +41,7 @@ export const EmptyState = ({
         </h2>
 
         <p className="text-sm font-sans font-medium text-accent-iron max-w-md mb-5 leading-relaxed">
-          Upload official DHR B-Class locomotive overhaul sheets, brake manuals, or permanent-way regulations. All indexing and questions run 100% on your device.
+          Upload DHR B-Class locomotive overhaul sheets, brake manuals, or maintenance specifications. All indexing and questions run 100% on your device.
         </p>
 
         {isIngesting ? (
@@ -78,7 +78,7 @@ export const EmptyState = ({
             <button
               onClick={onLoadSampleManual}
               className="neu-raised-interactive w-full sm:w-auto px-5 py-3 rounded-xl font-bold text-sm text-accent-iron flex items-center justify-center gap-2 border border-shadow-dark/40"
-              title="Loads official sample DHR B-Class specs (Boiler, Vacuum Brake, Valve Gear)"
+              title="Loads sample DHR B-Class specs (Boiler, Vacuum Brake, Valve Gear)"
             >
               <BookOpen className="w-4 h-4 text-accent-brass-dark" />
               <span>Load DHR B-Class Spec</span>

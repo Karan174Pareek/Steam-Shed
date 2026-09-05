@@ -127,7 +127,7 @@ export function App() {
   const handleLoadSampleManual = async (): Promise<boolean> => {
     try {
       setIsIngesting(true);
-      setIngestStatus('Fetching official DHR B-Class Maintenance Spec...');
+      setIngestStatus('Fetching sample DHR B-Class Maintenance Spec (Placeholder)...');
       setSystemError(null);
 
       const baseUrl = import.meta.env.BASE_URL || '/';

@@ -31,26 +31,34 @@ function detectHeading(line: string): string | null {
 
 /**
  * Chunks a list of extracted pages by section heading first,
- * then enforces a hard limit of ~500 words with ~50 words overlap.
+ * then enforces a hard limit of ~450 words with ~50 words overlap.
  */
 export function chunkExtractedPages(pages: ExtractedPage[]): RawChunk[] {
   const chunks: RawChunk[] = [];
   const MAX_WORDS = 450;
   const OVERLAP_WORDS = 50;
 
-  let currentHeading = 'General Information';
-
   for (const page of pages) {
     const lines = page.text.split('\n');
+    let currentHeading = `Page ${page.pageNumber} Overview`;
     let sectionBuffer: string[] = [];
 
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i].trim();
       if (!line) continue;
 
+      // Skip running header and page footer lines
+      if (
+        /Page\s+\d+\s+of\s+\d+/i.test(line) ||
+        /Darjeeling Himalayan Railway.*Tindharia/i.test(line) ||
+        /Maintenance Manual \(Sample\)/i.test(line)
+      ) {
+        continue;
+      }
+
       const detected = detectHeading(line);
       if (detected) {
-        // If we have accumulated text for the previous section, chunk it
+        // If we have accumulated text before this heading, chunk it
         if (sectionBuffer.length > 0) {
           const sectionText = sectionBuffer.join(' ');
           splitIntoBoundedChunks(sectionText, currentHeading, page.pageNumber, MAX_WORDS, OVERLAP_WORDS, chunks);
