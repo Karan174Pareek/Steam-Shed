@@ -11,6 +11,7 @@ Ask a question like *"What's the torque on this fitting?"* and get an answer gro
 ---
 
 ## Table of Contents
+- [Video Demo](#-video-demo)
 - [The Problem](#the-problem)
 - [Required Disclosures](#required-disclosures-per-event-submission-rules)
 - [How It Works](#how-it-works)
@@ -26,6 +27,16 @@ Ask a question like *"What's the torque on this fitting?"* and get an answer gro
 - [Deployment](#deployment)
 - [Sample Data & Demo Questions](#sample-data--demo-questions)
 - [Team](#team)
+---
+
+## 🎥 Video Demo
+
+https://github.com/user-attachments/assets/steam_shed_demo (or see below for in-repository media)
+
+<video src="assets/steam_shed_demo.mp4" controls="controls" width="100%" poster="public/favicon.svg">
+  Your browser does not support the video tag. You can view the demo video directly at <a href="assets/steam_shed_demo.mp4">assets/steam_shed_demo.mp4</a>.
+</video>
+
 ---
 
 ## The Problem
