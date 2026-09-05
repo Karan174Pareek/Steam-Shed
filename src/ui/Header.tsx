@@ -1,9 +1,10 @@
-import { Database, Wrench } from 'lucide-react';
+import { Database, Wrench, WifiOff } from 'lucide-react';
 
 interface HeaderProps {
   isLlmReady: boolean;
   modeLabel: string;
   documentCount: number;
+  isOffline?: boolean;
   onOpenStorage: () => void;
 }
 
@@ -11,6 +12,7 @@ export const Header = ({
   isLlmReady,
   modeLabel,
   documentCount,
+  isOffline = false,
   onOpenStorage,
 }: HeaderProps) => {
   return (
@@ -35,6 +37,17 @@ export const Header = ({
 
         {/* Right status area */}
         <div className="flex items-center gap-2 sm:gap-3">
+          {/* Offline Pill */}
+          {isOffline && (
+            <div
+              className="neu-inset-shallow px-2.5 py-1.5 rounded-full flex items-center gap-1.5 text-xs font-bold tracking-tight text-accent-brass border border-accent-brass/50 bg-accent-brass/10"
+              title="Running fully offline — zero network connection required"
+            >
+              <WifiOff className="w-3.5 h-3.5 text-accent-brass flex-shrink-0" />
+              <span className="hidden sm:inline">Offline</span>
+            </div>
+          )}
+
           {/* Status Pill */}
           <div
             className="neu-inset-shallow px-3 py-1.5 rounded-full flex items-center gap-2 text-xs font-bold tracking-tight text-accent-iron border border-shadow-dark/40"

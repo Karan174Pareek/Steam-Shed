@@ -38,7 +38,11 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,json,wasm,pdf,mjs}'],
-        maximumFileSizeToCacheInBytes: 25 * 1024 * 1024,
+        maximumFileSizeToCacheInBytes: 35 * 1024 * 1024,
+        navigateFallback: 'index.html',
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+        skipWaiting: true,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -69,13 +73,41 @@ export default defineConfig({
             },
           },
           {
+            urlPattern: /^https:\/\/cdn\.jsdelivr\.net\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'jsdelivr-cdn-cache',
+              expiration: {
+                maxEntries: 30,
+                maxAgeSeconds: 60 * 60 * 24 * 180,
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+          {
             // Cache on-device model weights from HuggingFace Xenova hub if downloaded on first run
+            urlPattern: /^https:\/\/huggingface\.co\/.*\/resolve\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'transformers-models-cache',
+              expiration: {
+                maxEntries: 40,
+                maxAgeSeconds: 60 * 60 * 24 * 180, // 6 months
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+          {
             urlPattern: /^https:\/\/huggingface\.co\/Xenova\/.*/i,
             handler: 'CacheFirst',
             options: {
               cacheName: 'transformers-models-cache',
               expiration: {
-                maxEntries: 30,
+                maxEntries: 40,
                 maxAgeSeconds: 60 * 60 * 24 * 180, // 6 months
               },
               cacheableResponse: {

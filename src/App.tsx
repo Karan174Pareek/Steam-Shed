@@ -23,7 +23,7 @@ import {
 } from './storage';
 import { ingestDocument } from './ingestion';
 import { answerQuestion, getActiveProviderStatus } from './generation';
-import { EMBEDDING_MODEL_VERSION } from './embedding';
+import { EMBEDDING_MODEL_VERSION, getEmbeddingPipeline } from './embedding';
 
 export function App() {
   const [documents, setDocuments] = useState<DocumentRecord[]>([]);
@@ -39,6 +39,7 @@ export function App() {
   const [systemError, setSystemError] = useState<string | null>(null);
   const [versionMismatch, setVersionMismatch] = useState(false);
   const [suggestedQuestions, setSuggestedQuestions] = useState<string[]>(STATIC_SUGGESTED_QUESTIONS);
+  const [isOffline, setIsOffline] = useState<boolean>(typeof navigator !== 'undefined' ? !navigator.onLine : false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -50,7 +51,21 @@ export function App() {
     scrollToBottom();
   }, [messages, isQuerying]);
 
-  // Initial load: fetch documents, storage stats, chunks for suggestions, and check model provider status
+  // Track online/offline status in real-time
+  useEffect(() => {
+    const handleOnline = () => setIsOffline(false);
+    const handleOffline = () => setIsOffline(true);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  // Initial load: fetch documents, storage stats, chunks for suggestions, pre-warm models, and check status
   useEffect(() => {
     async function initApp() {
       try {
@@ -66,6 +81,11 @@ export function App() {
         setSuggestedQuestions(deriveSuggestedQuestions(chunks));
         setIsLlmReady(providerStatus.isLlmReady);
         setModeLabel(providerStatus.modeLabel);
+
+        // Pre-warm on-device embedding pipeline in background so weights are cached for offline reload
+        getEmbeddingPipeline().catch((err) => {
+          console.log('[SteamShed] Background model warmup notice:', err);
+        });
 
         // Check for stale vector index version
         const hasOutdatedDocs = docs.some(
@@ -227,11 +247,12 @@ export function App() {
 
   return (
     <div className="flex flex-col min-h-screen bg-base text-accent-iron">
-      {/* Header with status pill and document manager trigger */}
+      {/* Header with status pill, offline indicator, and document manager trigger */}
       <Header
         isLlmReady={isLlmReady}
         modeLabel={modeLabel}
         documentCount={documents.length}
+        isOffline={isOffline}
         onOpenStorage={() => setIsStorageOpen(true)}
       />
 
