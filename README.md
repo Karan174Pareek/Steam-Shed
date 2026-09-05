@@ -31,11 +31,10 @@ Ask a question like *"What's the torque on this fitting?"* and get an answer gro
 
 ## 🎥 Video Demo
 
-https://github.com/user-attachments/assets/steam_shed_demo (or see below for in-repository media)
+[![Watch Demo on Google Drive](https://img.shields.io/badge/Demo_Video-Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/drive/folders/1L_T2f4e6aRpJd2gROqaMF0XmgjReTd9K?usp=sharing)
 
-<video src="assets/steam_shed_demo.mp4" controls="controls" width="100%" poster="public/favicon.svg">
-  Your browser does not support the video tag. You can view the demo video directly at <a href="assets/steam_shed_demo.mp4">assets/steam_shed_demo.mp4</a>.
-</video>
+Watch the full screen recording walkthrough on Google Drive:  
+🔗 **[Steam-Shed Assistant — Video Walkthrough](https://drive.google.com/drive/folders/1L_T2f4e6aRpJd2gROqaMF0XmgjReTd9K?usp=sharing)**
 
 ---
 
