@@ -1,9 +1,10 @@
 export const STATIC_SUGGESTED_QUESTIONS: string[] = [
-  'What is the operating boiler pressure for the B-Class locomotive?',
-  'What is the brake block to wheel tyre clearance?',
-  'What is the eccentric crank pin fastening nut torque?',
-  'What is the recommended renewal interval for fusible plugs?',
-  'What is the maximum allowable side play for axle box horncheeks?',
+  'What is the torque on the injector fitting?',
+  'What is the safety valve set pressure?',
+  'What is the brake rigging pin torque?',
+  'How often should brake rigging be inspected?',
+  'What are the steps to replace piston rod packing?',
+  "What's the part number for the axle box bearing shell?",
 ];
 
 export function deriveSuggestedQuestions(chunks: { sectionHeading: string }[]): string[] {

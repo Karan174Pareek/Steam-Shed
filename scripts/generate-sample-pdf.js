@@ -9,82 +9,134 @@ async function generateSamplePdf() {
 
   const pagesData = [
     {
-      title: 'Darjeeling Himalayan Railway — Tindharia Mechanical Workshop',
-      subtitle: 'Technical Maintenance & Overhaul Specification: B-Class 0-4-0ST Locomotives',
+      title: 'Darjeeling Himalayan Railway — B-Class Locomotive Maintenance Manual',
+      subtitle: 'Technical Specifications & Overhaul Reference — Tindharia Mechanical Workshop',
       sections: [
         {
-          heading: 'Section 1.0 — General Dimensions & Weight Distribution',
+          heading: 'Section 2.1: Safety Valve Pressure Setting',
           content: [
-            'Gauge: 2 feet 0 inches (610 mm) narrow gauge.',
-            'Working adhesive weight: 14.0 tonnes in full working order with 400 imperial gallons of water and 1.0 tonne coal.',
-            'Maximum axle load: 7.2 tonnes on driving axle.',
-            'Rigid wheelbase: 5 feet 6 inches (1,676 mm), allowing minimum curve negotiation down to 50 feet radius.',
-            'Cylinder bore and stroke: 11 inches diameter by 14 inches stroke.',
-            'Coupled wheel diameter: 2 feet 2 inches (660 mm) on tyre tread.'
+            'Safety valve set pressure: 160 psi (11.0 bar).',
+            'Tolerance: Valves must lift cleanly within +/- 2 psi of nominal set pressure.',
+            'Configuration: Dual Ramsbottom spring-loaded safety valves mounted on boiler firebox wrapper.',
+            'Inspection: Test on steam before each running shift.'
           ]
         },
         {
-          heading: 'Section 1.1 — Boiler & Pressure Vessel Specifications',
+          heading: 'Section 2.2: Boiler Washout Interval',
           content: [
-            'Maximum operating boiler pressure: 140 psi (9.65 bar).',
-            'Safety valve configuration: Twin 2.0-inch Ramsbottom duplex safety valves set to lift precisely at 142 psi.',
-            'Hydraulic test pressure: 210 psi cold water pressure required every 12 months during annual inspection.',
-            'Fusible plugs: Dual lead-filled bronze alloy plugs in firebox crown plate must be renewed every 6 months or 12,000 miles, whichever comes first.',
-            'Boiler barrel diameter: 3 feet 0.5 inches outside, constructed from 3/8 inch steel plate.',
-            'Firebox heating surface: 40 square feet; tube heating surface: 310 square feet across 84 brass smoke tubes (1.5 inch outer diameter).'
+            'Recommended maintenance interval: Boiler washout is required every 30 days or 1,500 km, whichever comes first.',
+            'Procedure: Remove all mud plugs, washout plugs, and inspect crown sheet for scale accumulation.',
+            'Fusible plugs renewal: Replace bronze lead-core fusible plugs every 45 days or 2,000 km.'
+          ]
+        },
+        {
+          heading: 'Section 3.1: Injector Fitting Torque Specification',
+          content: [
+            'Torque on injector fitting: Tighten delivery and steam union nuts to 85 lb-ft (115 N·m).',
+            'Gasket spec: Use annealed copper sealing washers.',
+            'Warning: Do not overtighten beyond 95 lb-ft to prevent stripping bronze union threads.'
+          ]
+        },
+        {
+          heading: 'Section 3.2: Injector Inspection Interval',
+          content: [
+            'Inspection interval: Inspect injector fittings, steam cones, and delivery check valves every 7 days of service.',
+            'Check for steam leakage, lime deposit buildup, and test suction pickup under 120 psi boiler pressure.'
           ]
         }
       ]
     },
     {
-      title: 'Darjeeling Himalayan Railway — Shed Maintenance Manual',
-      subtitle: 'B-Class 0-4-0ST Running Maintenance — Tindharia Shed',
+      title: 'Darjeeling Himalayan Railway — B-Class Locomotive Maintenance Manual',
+      subtitle: 'Brake Rigging, Wheelsets & Running Tolerances — Tindharia Shed',
       sections: [
         {
-          heading: 'Section 2.3 — Brake Gear & Vacuum Apparatus',
+          heading: 'Section 4.1: Brake Rigging Pin Torque',
           content: [
-            'Brake system type: Ejector-driven vacuum automatic brake with auxiliary steam brake and hand screw apparatus.',
-            'Vacuum brake operating level: Minimum 18 to 20 inches of mercury (Hg) required before departure from Tindharia, Kurseong, or Darjeeling.',
-            'Brake block to wheel tyre clearance: 1/4 inch (6.35 mm) total clearance per block in released position.',
-            'Brake hanger mounting pin torque: Tighten to 185 Nm (136 ft-lb) with cotter pin positively locked.',
-            'Vacuum brake cylinder: 15-inch rolling ring cylinder mounted under rear bunker.',
-            'Piston stroke travel: Normal operating stroke is 2.5 to 3.0 inches; maximum allowable stroke before manual slack adjustment is 4.0 inches (102 mm).'
+            'Brake rigging pin torque: Tighten to 45 lb-ft (61 N·m). Do not exceed 50 lb-ft.',
+            'Fastener locking: All brake pin castle nuts must be secured with new split cotter pins.'
           ]
         },
         {
-          heading: 'Section 2.4 — Wheelsets & Tyre Profile Tolerances',
+          heading: 'Section 4.2: Brake Rigging Inspection Interval',
           content: [
-            'Tyre tread condemnation thickness: Minimum allowable tyre thickness on tread centre line is 1.25 inches (31.8 mm).',
-            'Wheel flange wear limit: Flange thickness must not be less than 13/16 inch (20.6 mm) measured at 9/16 inch below flange crest.',
-            'Wheel gauge back-to-back distance: 1 foot 9.75 inches (+/- 1/16 inch) (552.5 mm).',
-            'Axle box horncheek lateral clearance: 3/32 inch (2.4 mm) maximum allowable side play before liner replacement.'
+            'Recommended maintenance interval: Inspect brake rigging every 30 days or 1,000 km, whichever comes first.',
+            'Brake block to wheel tyre clearance: Maintain nominal 4.5 mm to 6.0 mm clearance in released position.'
+          ]
+        },
+        {
+          heading: 'Section 4.3: Brake Rigging Inspection Procedure',
+          content: [
+            '6-step procedure for brake rigging inspection:',
+            '1. Chock locomotive wheels securely on level shed track.',
+            '2. Visually inspect all hanger pins, levers, and mounting brackets for cracks or elongation.',
+            '3. Check torque on all pivot and clevis pins (target 45 lb-ft).',
+            '4. Measure brake shoe thickness; condemn if worn under 10 mm.',
+            '5. Test full brake cylinder stroke and verify equal shoe contact.',
+            '6. Log findings in shed maintenance register.'
+          ]
+        },
+        {
+          heading: 'Section 5.1: Wheel Tread Diameter & Tolerance',
+          content: [
+            'Nominal wheel tread diameter: 508 mm (20 in).',
+            'Allowable wheel wear: Maximum 6 mm reduction from nominal diameter allowed before tyre reprofiling is required.',
+            'Condemnation limit: Discard tyre when thickness reaches 25 mm.'
+          ]
+        },
+        {
+          heading: 'Section 5.2: Axle Bearing Clearance',
+          content: [
+            'Axle box bearing clearance: 0.15–0.25 mm running clearance between bronze journal shell and axle neck.',
+            'Horncheek lateral side play: Discard liner if side play exceeds 2.5 mm.'
           ]
         }
       ]
     },
     {
-      title: 'Darjeeling Himalayan Railway — Shed Maintenance Manual',
-      subtitle: 'B-Class 0-4-0ST Motion & Lubrication Specs',
+      title: 'Darjeeling Himalayan Railway — B-Class Locomotive Maintenance Manual',
+      subtitle: 'Motion, Packing Procedures & Spare Parts Reference — Tindharia Shed',
       sections: [
         {
-          heading: 'Section 3.2 — Running Gear, Motion & Lubrication',
+          heading: 'Section 6.1: Valve Gear Lubrication Schedule',
           content: [
-            'Valve gear type: Walschaerts external valve gear with inside admission piston valves.',
-            'Eccentric crank pin fastening nut torque: 240 Nm (177 ft-lb).',
-            'Connecting rod big-end brasses running clearance: 0.012 to 0.015 inches (0.30 to 0.38 mm); shim adjustment required if exceeding 0.025 inches.',
-            'Crosshead slipper guide clearance: 0.010 inch nominal clearance; discard shims if clearance exceeds 0.028 inches.',
-            'Steam cylinder lubrication: Mechanical displacement syphon lubricator reservoir filled with steam cylinder oil ISO VG 460.',
-            'Cylinder lubricator feed rate: 4 to 6 drops per minute per cylinder under steam.',
-            'Reversing screw shaft: Pack with Grade 2 Calcium Graphite Grease every 48 operating shed hours.'
+            'Lubricant specification: Main rod bearings and eccentric straps require Grade EP-2 grease.',
+            'Lubrication interval: Lubricate valve gear pins, motion links, and slide bars every 100 km or daily before departure.'
           ]
         },
         {
-          heading: 'Section 4.1 — Injectors & Boiler Feed Systems',
+          heading: 'Section 6.2: Coupling Rod Bearing Clearance',
           content: [
-            'Injectors: Two Gresham & Craven No. 5 self-acting combination live-steam injectors installed on cab spectacle plate.',
-            'Minimum injector delivery pressure: 145 psi with boiler working pressure at 135 psi.',
-            'Feed delivery pipe union nut torque: Tighten to 110 Nm (81 ft-lb). Inspect copper washer at every wash-out.',
-            'Boiler check / clack valve lift limit: Maximum allowable lift of the internal bronze clack valve disc is 5/16 inch (7.9 mm). If lift exceeds 3/8 inch due to seat reaming, replace the disc.'
+            'Coupling rod bearing clearance: 0.10–0.20 mm diametral clearance on crank pins.',
+            'Eccentric crank pin fastening nut torque: 185 N·m (136 lb-ft).'
+          ]
+        },
+        {
+          heading: 'Section 7.1: Piston Rod Packing Replacement Procedure',
+          content: [
+            '6-step procedure for piston rod packing replacement:',
+            '1. Isolate cylinder and ensure steam chest is fully depressurized.',
+            '2. Remove gland nuts and extract old metallic/graphite packing rings.',
+            '3. Inspect piston rod surface for scoring or ovality (must be < 0.05 mm).',
+            '4. Fit new packing rings with split joints staggered at 90 degrees.',
+            '5. Tighten gland nuts snug and evenly (do not over-compress).',
+            '6. Conduct test run under steam and check for leaks.'
+          ]
+        },
+        {
+          heading: 'Section 7.2: Piston Rod Packing Inspection Interval',
+          content: [
+            'Inspection interval: Piston rod packing must be checked for steam leakage every 14 days of service.'
+          ]
+        },
+        {
+          heading: 'Section 8: Spare Parts Reference',
+          content: [
+            'Official DHR spare part numbers:',
+            '• Injector delivery fitting union nut: Part No. BC-INJ-014 (brass, 3/4in BSP).',
+            '• Brake rigging clevis pin: Part No. BC-BRK-027 (case-hardened steel).',
+            '• Axle box bearing shell: Part No. BC-AXL-009 (order in pairs).',
+            '• Piston rod metallic packing ring set: Part No. BC-CYL-033.'
           ]
         }
       ]
@@ -96,101 +148,101 @@ async function generateSamplePdf() {
     const page = pdfDoc.addPage([595.28, 841.89]); // A4 portrait in points
     const { width, height } = page.getSize();
 
-    let y = height - 50;
+    let y = height - 45;
 
     // Header border
     page.drawRectangle({
-      x: 40,
+      x: 35,
       y: y - 10,
-      width: width - 80,
-      height: 48,
+      width: width - 70,
+      height: 44,
       color: rgb(0.93, 0.90, 0.84),
       borderColor: rgb(0.23, 0.21, 0.19),
-      borderWidth: 1.5,
+      borderWidth: 1.2,
     });
 
     // Page title
     page.drawText(pageData.title, {
-      x: 52,
-      y: y + 20,
-      size: 13,
+      x: 45,
+      y: y + 18,
+      size: 11,
       font: boldFont,
       color: rgb(0.23, 0.21, 0.19),
     });
 
     page.drawText(pageData.subtitle, {
-      x: 52,
+      x: 45,
       y: y + 4,
-      size: 10,
+      size: 9,
       font: font,
       color: rgb(0.40, 0.35, 0.30),
     });
 
-    y -= 50;
+    y -= 45;
 
     for (const section of pageData.sections) {
-      y -= 15;
+      y -= 10;
       // Section header banner
       page.drawRectangle({
-        x: 40,
-        y: y - 6,
-        width: width - 80,
-        height: 22,
+        x: 35,
+        y: y - 4,
+        width: width - 70,
+        height: 18,
         color: rgb(0.61, 0.48, 0.24), // Brass accent tone
       });
 
       page.drawText(section.heading, {
-        x: 48,
+        x: 42,
         y: y,
-        size: 11,
+        size: 9.5,
         font: boldFont,
         color: rgb(1, 1, 1),
       });
 
-      y -= 26;
+      y -= 20;
 
       for (const line of section.content) {
         // Bullet
         page.drawCircle({
-          x: 48,
-          y: y + 4,
-          size: 2.5,
+          x: 45,
+          y: y + 3,
+          size: 2,
           color: rgb(0.23, 0.21, 0.19),
         });
 
         page.drawText(line, {
-          x: 58,
+          x: 54,
           y: y,
-          size: 9.5,
+          size: 8.5,
           font: font,
-          maxWidth: width - 110,
-          lineHeight: 13,
+          maxWidth: width - 90,
+          lineHeight: 11,
           color: rgb(0.15, 0.13, 0.12),
         });
 
-        y -= 26;
+        y -= 16;
       }
     }
 
     // Footer
     page.drawLine({
-      start: { x: 40, y: 40 },
-      end: { x: width - 40, y: 40 },
+      start: { x: 35, y: 35 },
+      end: { x: width - 35, y: 35 },
       thickness: 1,
       color: rgb(0.66, 0.60, 0.49),
     });
 
-    page.drawText('Darjeeling Himalayan Railway • Tindharia Locomotive Works • Official Shed Copy', {
-      x: 40,
-      y: 26,
+    page.drawText('Darjeeling Himalayan Railway • Tindharia Locomotive Works • B-Class Official Reference', {
+      x: 35,
+      y: 22,
       size: 8,
       font: font,
       color: rgb(0.45, 0.40, 0.35),
     });
 
     page.drawText(`Page ${i + 1} of ${pagesData.length}`, {
-      x: width - 90,
-      y: 26,
+      x: width - 85,
+      y: 22,
       size: 8,
       font: boldFont,
       color: rgb(0.23, 0.21, 0.19),
@@ -203,9 +255,11 @@ async function generateSamplePdf() {
     fs.mkdirSync(destDir, { recursive: true });
   }
 
-  const destPath = path.join(destDir, 'DHR_B_Class_Loco_Maintenance_Spec.pdf');
-  fs.writeFileSync(destPath, Buffer.from(pdfBytes));
-  console.log('Sample DHR manual PDF generated successfully at:', destPath);
+  const destPath1 = path.join(destDir, 'DHR_B_Class_Loco_Maintenance_Spec.pdf');
+  const destPath2 = path.join(destDir, 'bclass_maintenance_manual_sample.pdf');
+  fs.writeFileSync(destPath1, Buffer.from(pdfBytes));
+  fs.writeFileSync(destPath2, Buffer.from(pdfBytes));
+  console.log('Sample DHR manual PDFs generated successfully at:', destPath1, 'and', destPath2);
 }
 
 generateSamplePdf().catch(console.error);
