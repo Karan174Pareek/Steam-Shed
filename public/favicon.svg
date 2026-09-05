@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <rect width="100" height="100" rx="20" fill="#E4DCCB"/>
+  <rect x="5" y="5" width="90" height="90" rx="16" fill="#EDE6D6" stroke="#A89A7C" stroke-width="2"/>
+  <!-- Train Cowcatcher / Locomotive Silhouette in Iron -->
+  <path d="M 25 70 L 75 70 L 70 52 L 60 52 L 60 38 L 56 38 L 56 26 L 44 26 L 44 38 L 40 38 L 40 52 L 30 52 Z" fill="#3A3530"/>
+  <!-- Brass Headlamp -->
+  <circle cx="50" cy="46" r="6" fill="#9C7A3C" stroke="#EDE6D6" stroke-width="1.5"/>
+  <!-- Wheels -->
+  <circle cx="34" cy="73" r="5" fill="#3A3530"/>
+  <circle cx="50" cy="73" r="5" fill="#3A3530"/>
+  <circle cx="66" cy="73" r="5" fill="#3A3530"/>
+</svg>

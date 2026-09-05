@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --base: #E4DCCB;
+  --base-raised: #EDE6D6;
+  --shadow-dark: #A89A7C;
+  --shadow-light: #FFFDF6;
+  --accent-iron: #2D2824;
+  --accent-iron-muted: #524B43;
+  --accent-brass: #9C7A3C;
+  --accent-brass-dark: #7A5B22;
+}
+
+body {
+  background-color: var(--base);
+  color: var(--accent-iron);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Background utility compatibility */
+.bg-base {
+  background-color: var(--base);
+}
+
+.bg-base-raised {
+  background-color: var(--base-raised);
+}
+
+/* Tactile Neumorphic Utilities */
+.neu-raised {
+  background: var(--base-raised);
+  box-shadow: 5px 5px 12px var(--shadow-dark), -5px -5px 12px var(--shadow-light);
+}
+
+.neu-raised-interactive {
+  background: var(--base-raised);
+  box-shadow: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.neu-raised-interactive:active:not(:disabled) {
+  transform: scale(0.98);
+  box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+}
+
+.neu-inset {
+  background: var(--base);
+  box-shadow: inset 4px 4px 9px var(--shadow-dark), inset -4px -4px 9px var(--shadow-light);
+}
+
+.neu-inset-shallow {
+  background: var(--base);
+  box-shadow: inset 2px 2px 5px var(--shadow-dark), inset -2px -2px 5px var(--shadow-light);
+}
+
+/* Hairline separation line with solid contrast */
+.neu-hairline {
+  border-top: 1px solid rgba(110, 98, 78, 0.45);
+}
+
+/* Focus states strictly in Brass */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent-brass) !important;
+  outline-offset: 2px !important;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scrollbar customization for shed ambient look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--shadow-dark);
+  border-radius: 3px;
+}
