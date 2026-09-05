@@ -26,8 +26,6 @@ Ask a question like *"What's the torque on this fitting?"* and get an answer gro
 - [Deployment](#deployment)
 - [Sample Data & Demo Questions](#sample-data--demo-questions)
 - [Team](#team)
-- [License](#license)
-
 ---
 
 ## The Problem
@@ -246,8 +244,3 @@ The app is deployable to **Vercel**, **Netlify**, or **GitHub Pages**:
 
 ## Team
 - **Karan Pareek** — Solo Developer
-
----
-
-## License
-MIT License. Open for public and community railway preservation use.
