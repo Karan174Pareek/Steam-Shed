@@ -132,13 +132,13 @@ export function App() {
 
       const baseUrl = import.meta.env.BASE_URL || '/';
       const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
-      const response = await fetch(`${cleanBase}sample-manuals/DHR_B_Class_Loco_Maintenance_Spec.pdf`);
+      const response = await fetch(`${cleanBase}sample-manuals/bclass_maintenance_manual_sample.pdf`);
       if (!response.ok) {
         throw new Error('Sample manual file not found in local app shell');
       }
 
       const blob = await response.blob();
-      const sampleFile = new File([blob], 'DHR_B_Class_Loco_Maintenance_Spec.pdf', {
+      const sampleFile = new File([blob], 'bclass_maintenance_manual_sample.pdf', {
         type: 'application/pdf',
       });
 
