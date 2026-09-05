@@ -257,7 +257,7 @@ export function App() {
                   Locomotive Maintenance Knowledge Active
                 </h3>
                 <p className="text-xs sm:text-sm text-accent-iron font-semibold max-w-md mx-auto mb-5">
-                  {documents.length} manual{documents.length === 1 ? '' : 's'} indexed on-device. Ask about torque limits, clearances, boiler tests, or valve timings.
+                  {documents.length} manual{documents.length === 1 ? '' : 's'} indexed on-device &bull; Ask about torque, intervals, and procedures — works fully offline.
                 </p>
 
                 {/* Suggested Questions in Initial Knowledge State */}

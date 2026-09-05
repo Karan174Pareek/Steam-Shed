@@ -81,14 +81,6 @@ export async function ingestDocument(
 
     // 5. Store document & chunks in IndexedDB
     if (onProgress) onProgress(`Saving to on-device store...`);
-    const docRecord: DocumentRecord = {
-      id: documentId,
-      name: documentName,
-      ingestedAt: Date.now(),
-      embeddingModelVersion: EMBEDDING_MODEL_VERSION,
-      pageCount: parsedDoc.pages.length,
-      fileSize: file.size,
-    };
 
     const chunkRecords: ChunkRecord[] = rawChunks.map((rc, idx) => ({
       id: `chunk_${documentId}_${idx}`,
@@ -98,6 +90,16 @@ export async function ingestDocument(
       text: rc.text,
       embedding: embeddings[idx],
     }));
+
+    const docRecord: DocumentRecord = {
+      id: documentId,
+      name: documentName,
+      ingestedAt: Date.now(),
+      embeddingModelVersion: EMBEDDING_MODEL_VERSION,
+      pageCount: parsedDoc.pages.length,
+      chunkCount: chunkRecords.length,
+      fileSize: file.size,
+    };
 
     await saveDocument(docRecord);
     await saveChunks(chunkRecords, documentName);

@@ -113,7 +113,8 @@ export const StorageModal = ({
                       {doc.name}
                     </p>
                     <p className="text-xs text-accent-iron font-medium">
-                      {doc.pageCount ? `${doc.pageCount} pages` : 'PDF'} &bull;{' '}
+                      {doc.pageCount ? `${doc.pageCount} page${doc.pageCount === 1 ? '' : 's'}` : 'PDF'} &bull;{' '}
+                      {doc.chunkCount ? `${doc.chunkCount} sections indexed` : 'Indexed'} &bull;{' '}
                       {new Date(doc.ingestedAt).toLocaleDateString()}
                     </p>
                   </div>

@@ -6,6 +6,7 @@ export interface DocumentRecord {
   ingestedAt: number;
   embeddingModelVersion: string;
   pageCount?: number;
+  chunkCount?: number;
   fileSize?: number;
 }
 

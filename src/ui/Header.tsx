@@ -28,7 +28,7 @@ export const Header = ({
               </h1>
             </div>
             <p className="text-xs text-accent-iron font-semibold tracking-tight">
-              DHR Tindharia Works &bull; On-Device Q&amp;A
+              Ask about torque, intervals, and procedures &bull; works fully offline
             </p>
           </div>
         </div>
